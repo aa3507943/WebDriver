@@ -14,9 +14,3 @@ class WebDriver:
     def initialize():
         import shutil
         shutil.rmtree("./TEMP/")
-
-driver = WebDriver.create("edge", "win64")
-driver.get("https://youtube.com")
-time.sleep(2)
-driver.quit()
-WebDriver.initialize()
