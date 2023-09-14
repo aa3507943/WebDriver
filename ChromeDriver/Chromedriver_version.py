@@ -116,6 +116,8 @@ import os, time
 #                     continue
 
 #     def get_version_via_com(self, filename): #從目標路徑取得該機器上的Chrome當前版本
+        # import pythoncom
+        # pythoncom.CoInitialize()
 #         parser = Dispatch("Scripting.FileSystemObject")
 #         try:
 #             version = parser.GetFileVersion(filename)
@@ -227,6 +229,8 @@ class ChromeDriver:
                     continue
 
     def get_version_via_com(self, filename): #從目標路徑取得該機器上的Chrome當前版本
+        import pythoncom
+        pythoncom.CoInitialize()
         parser = Dispatch("Scripting.FileSystemObject")
         try:
             version = parser.GetFileVersion(filename)
@@ -281,5 +285,3 @@ class ChromeDriver:
         except:
             # ExceptionHandler(msg= "Cannot open browser driver. 無法開啟瀏覽器驅動器", exceptionLevel= "critical")
             pass
-
-ChromeDriver("win64").climb_chromedriver_version()
