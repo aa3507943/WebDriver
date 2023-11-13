@@ -13,6 +13,12 @@ class EdgeDriver:
         self.download_edgedriver()
         self.extract_zip()
 
+    def __version_filter(self, data):
+        startIdx = data.index(" ")
+        endIdx = data.index(":")
+        return data[startIdx+1:endIdx]
+ 
+
     def climb_edgedriver_version(self):
         import json
         if not os.path.isdir("./TEMP"):
@@ -25,19 +31,7 @@ class EdgeDriver:
             links = json.load(f)
             for i in range(len(links['payload']['blob']['headerInfo']['toc'])):
                 if self.get_edge_version() in links['payload']['blob']['headerInfo']['toc'][i]['text']:
-                    startIdx = links['payload']['blob']['headerInfo']['toc'][i]['text'].index(" ")
-                    endIdx = links['payload']['blob']['headerInfo']['toc'][i]['text'].index(":")
-                    ver = links['payload']['blob']['headerInfo']['toc'][i]['text'][startIdx+1:endIdx]
-                    verList.append(ver)
-            
-        # print(parseData)
-        # for i in parseData:
-        #     if self.get_edge_version() in i.text:
-        #         startIdx = i.text.find("Version")
-        #         endIdx = i.text.find(":")
-        #         if startIdx != -1 and endIdx != -1:
-        #             self.ver = i.text[startIdx + len("Version"):endIdx].strip()
-        #             print(self.ver)
+                   verList.append(self.__version_filter(links['payload']['blob']['headerInfo']['toc'][i]['text']))
         return f"https://msedgedriver.azureedge.net/{verList[0]}/edgedriver_{self.System}.zip"
     
 
@@ -127,5 +121,3 @@ class EdgeDriver:
         except:
             # ExceptionHandler(msg= "Cannot open browser driver. 無法開啟瀏覽器驅動器", exceptionLevel= "critical")
             pass
-
-EdgeDriver("win64").climb_edgedriver_version()
