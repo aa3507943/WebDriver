@@ -246,7 +246,7 @@ class ChromeDriver:
             tmp.pop()
         self.chromeVersion = ".".join(tmp)
         # print(self.chromeVersion)
-        return self.chromeVersion
+        return self.chromeVersion + "."
     
     def create_driver(self):
         try:
@@ -257,7 +257,7 @@ class ChromeDriver:
                 'notifications': 2,
             },
             'profile.default_content_settings.popups': 0, 
-            'download.default_directory': os.path.abspath('AzureDevops\\CSV Folder\\'),
+            'download.default_directory': os.path.abspath('TEMP'),
             "download.prompt_for_download": False,
             "safebrowsing_for_trusted_sources_enabled": False,
             "safebrowsing.enabled": False}

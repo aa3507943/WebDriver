@@ -8,19 +8,38 @@ import os, time
 
 
 class EdgeDriver:
-    def __init__(self, system) -> None:
+    def __init__(self, system):
         self.System = system
         self.download_edgedriver()
         self.extract_zip()
 
     def climb_edgedriver_version(self):
-        response = requests.get("https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/")
-        rep = BeautifulSoup(response.text, "html.parser")
-        parseData = rep.select("div[class='bare driver-downloads'] p[class='driver-download__meta'] a[href]")
-        for i in parseData:
-            if self.get_edge_version() in i.attrs['href'] and self.System in i.attrs['href']:
-                print(i.attrs['href'])
-                return i.attrs['href']
+        import json
+        if not os.path.isdir("./TEMP"):
+            os.makedirs("./TEMP")
+        verList = []
+        response = requests.get("https://github.com/MicrosoftDocs/Edge-Enterprise/blob/public/edgeenterprise/microsoft-edge-relnote-beta-channel.md")
+        with open("./TEMP/download_link.json", mode= "w") as f:
+            f.write(response.text)
+        with open("./TEMP/download_link.json", mode= "r") as f:
+            links = json.load(f)
+            for i in range(len(links['payload']['blob']['headerInfo']['toc'])):
+                if self.get_edge_version() in links['payload']['blob']['headerInfo']['toc'][i]['text']:
+                    startIdx = links['payload']['blob']['headerInfo']['toc'][i]['text'].index(" ")
+                    endIdx = links['payload']['blob']['headerInfo']['toc'][i]['text'].index(":")
+                    ver = links['payload']['blob']['headerInfo']['toc'][i]['text'][startIdx+1:endIdx]
+                    verList.append(ver)
+            
+        # print(parseData)
+        # for i in parseData:
+        #     if self.get_edge_version() in i.text:
+        #         startIdx = i.text.find("Version")
+        #         endIdx = i.text.find(":")
+        #         if startIdx != -1 and endIdx != -1:
+        #             self.ver = i.text[startIdx + len("Version"):endIdx].strip()
+        #             print(self.ver)
+        return f"https://msedgedriver.azureedge.net/{verList[0]}/edgedriver_{self.System}.zip"
+    
 
     def download_edgedriver(self):
         if not os.path.isdir("./TEMP"):
@@ -69,7 +88,7 @@ class EdgeDriver:
             tmp.pop()
         self.edgeVersion = ".".join(tmp)
         # print(self.edgeVersion)
-        return self.edgeVersion
+        return self.edgeVersion + "."
     
     def create_driver(self):
         try:
@@ -80,7 +99,7 @@ class EdgeDriver:
                 'notifications': 2,
             },
             'profile.default_content_settings.popups': 0, 
-            'download.default_directory': os.path.abspath('AzureDevops\\CSV Folder\\'),
+            'download.default_directory': os.path.abspath('TEMP'),
             "download.prompt_for_download": False,
             "safebrowsing_for_trusted_sources_enabled": False,
             "safebrowsing.enabled": False}
@@ -109,3 +128,4 @@ class EdgeDriver:
             # ExceptionHandler(msg= "Cannot open browser driver. 無法開啟瀏覽器驅動器", exceptionLevel= "critical")
             pass
 
+EdgeDriver("win64").climb_edgedriver_version()
