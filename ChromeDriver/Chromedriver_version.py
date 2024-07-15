@@ -163,6 +163,7 @@ class ChromeDriver:
                 'notifications': 2,
             },
             'profile.default_content_settings.popups': 0, 
+            "profile.default_content_setting_values.clipboard": 1,
             'download.default_directory': os.path.abspath('AzureDevops\\CSV Folder\\'),
             "download.prompt_for_download": False,
             "safebrowsing_for_trusted_sources_enabled": False,
