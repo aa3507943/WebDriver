@@ -1,0 +1,183 @@
+[1742987514.430][INFO]: Starting ChromeDriver 134.0.6998.165 (fd886e2cb29dd984c13deec032832dee68d8abe3-refs/branch-heads/6998@{#2122}) on port 52137
+[1742987514.430][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1742987514.436][INFO]: ChromeDriver was started successfully on port 52137
+[1742987514.921][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--lang=zh-TW", "--no-sandbox", "--window-size=800x600", "--mute-audio", "--disable-dev-shm-usage", "--remote-debugging-port=9222", "--disable-blink-features=AutomationControlled", "--disable-features=InterestCohort", "--log-level=1" ],
+            "extensions": [  ],
+            "prefs": {
+               "download.default_directory": "C:\\Users\\qatow\\Documents\\jvd\\jvd_gemini_automation\\WebDriver\\ChromeDriver",
+               "download.prompt_for_download": false,
+               "profile.default_content_setting_values": {
+                  "notifications": 2
+               },
+               "profile.default_content_setting_values.clipboard": 1,
+               "profile.default_content_settings.popups": 0,
+               "safebrowsing.enabled": false,
+               "safebrowsing_for_trusted_sources_enabled": false
+            }
+         },
+         "goog:loggingPrefs": {
+            "performance": "ALL"
+         },
+         "pageLoadStrategy": "normal"
+      },
+      "firstMatch": [ {
+      } ]
+   }
+}
+[1742987514.921][INFO]: Browser search. Trying... C:\Users\qatow\Documents\jvd\jvd_gemini_automation\WebDriver\ChromeDriver\TEMP\chromedriver-win64\chrome.exe
+[1742987514.921][INFO]: Browser search. Trying... C:\Users\qatow\Documents\jvd\jvd_gemini_automation\WebDriver\ChromeDriver\TEMP\chromedriver-win64\chrome.exe
+[1742987514.921][INFO]: Browser search. Trying... C:\Users\qatow\Documents\jvd\jvd_gemini_automation\WebDriver\ChromeDriver\TEMP\chromedriver-win64\chromium.exe
+[1742987514.925][INFO]: Browser search. Trying... C:\Users\qatow\AppData\Local\Google\Chrome\Application\chrome.exe
+[1742987514.925][INFO]: Browser search. Trying... C:\Program Files\Google\Chrome\Application\chrome.exe
+[1742987514.925][INFO]: Browser search. Found at  C:\Program Files\Google\Chrome\Application\chrome.exe
+[1742987514.927][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "download": {
+      "default_directory": "C:\\Users\\qatow\\Documents\\jvd\\jvd_gemini_automation\\WebDriver\\ChromeDriver",
+      "prompt_for_download": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "clipboard": 1,
+         "notifications": 2
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 0,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "safebrowsing_for_trusted_sources_enabled": false,
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1742987514.928][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1742987514.930][INFO]: ChromeDriver supports communication with Chrome via pipes. This is more reliable and more secure.
+[1742987514.930][INFO]: Use the --remote-debugging-pipe Chrome switch instead of the default --remote-debugging-port to enable this communication mode.
+[1742987514.931][INFO]: Launching chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-pre-commit-input --disable-background-networking --disable-backgrounding-occluded-windows --disable-blink-features=AutomationControlled --disable-client-side-phishing-detection --disable-default-apps --disable-dev-shm-usage --disable-features=InterestCohort --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-logging --lang=zh-TW --log-level=1 --mute-audio --no-first-run --no-sandbox --no-service-autorun --password-store=basic --remote-debugging-port=9222 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\qatow\AppData\Local\Temp\scoped_dir18980_1414498905" --window-size=800x600 data:,
+[1742987515.303][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1742987515.326][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "134.0.6998.167",
+      "chrome": {
+         "chromedriverVersion": "134.0.6998.165 (fd886e2cb29dd984c13deec032832dee68d8abe3-refs/branch-heads/6998@{#2122})",
+         "userDataDir": "C:\\Users\\qatow\\AppData\\Local\\Temp\\scoped_dir18980_1414498905"
+      },
+      "fedcm:accounts": true,
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:9222"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:credBlob": true,
+      "webauthn:extension:largeBlob": true,
+      "webauthn:extension:minPinLength": true,
+      "webauthn:extension:prf": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "ab93d18e49a2c7b9db2989ccd9188353"
+}
+[1742987515.332][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] COMMAND Navigate {
+   "url": "https://jump.ftgaming-stg.cc/Hash/StandAloneDragonTower/?Lang=en-US&ProductId=GMMSHOW6020&Token=0c7143a5352be1ec2ef02bf5d68f34ebf35832845b98d4a0ddf3f60489fb4b2fd77f1fd4bc3639183f7369fb9127c6fa656fea97024dd1645b2f37974e4c5908"
+}
+[1742987515.332][INFO]: Waiting for pending navigations...
+[1742987515.347][INFO]: Done waiting for pending navigations. Status: ok
+[1742987515.523][INFO]: Waiting for pending navigations...
+[1742987515.523][INFO]: Done waiting for pending navigations. Status: ok
+[1742987515.523][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] RESPONSE Navigate
+[1742987515.551][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] COMMAND SetWindowRect {
+   "height": null,
+   "width": null,
+   "x": 1920,
+   "y": -400
+}
+[1742987515.551][INFO]: Waiting for pending navigations...
+[1742987515.551][INFO]: Done waiting for pending navigations. Status: ok
+[1742987515.949][INFO]: Waiting for pending navigations...
+[1742987515.986][INFO]: Done waiting for pending navigations. Status: ok
+[1742987515.986][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] RESPONSE SetWindowRect {
+   "height": 848,
+   "width": 1052,
+   "x": 1920,
+   "y": -400
+}
+[1742987515.993][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] COMMAND MaximizeWindow {
+}
+[1742987515.993][INFO]: Waiting for pending navigations...
+[1742987515.994][INFO]: Done waiting for pending navigations. Status: ok
+[1742987516.057][INFO]: Waiting for pending navigations...
+[1742987516.059][INFO]: Done waiting for pending navigations. Status: ok
+[1742987516.059][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] RESPONSE MaximizeWindow {
+   "height": 880,
+   "width": 1552,
+   "x": -8,
+   "y": -8
+}
+[1742987577.670][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] COMMAND Quit {
+}
+[1742987577.779][INFO]: [ab93d18e49a2c7b9db2989ccd9188353] RESPONSE Quit

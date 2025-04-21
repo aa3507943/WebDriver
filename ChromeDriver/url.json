@@ -1,0 +1,4 @@
+{
+    "chromedriver-resourse": "https://raw.githubusercontent.com/GoogleChromeLabs/chrome-for-testing/main/data/known-good-versions-with-downloads.json",
+    "chromedriver-url": "https://storage.googleapis.com/chrome-for-testing-public"
+}
